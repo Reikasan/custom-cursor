@@ -1,0 +1,188 @@
+body {
+    box-sizing: border-box;
+/* Set default cursor with butterfly image
+cursor: url(url) x y, fallback cursor;
+
+- this PNG image size is 50*50px, and to center it, added 25px horizontally and vertically
+*/
+cursor: url("https://github.com/Reikasan/photo_for_codepen/blob/main/vecteezy_monarca-mariposa-diseno_24134725_small.png?raw=true")
+    25 25,
+    default;
+}
+  
+/* For the anchor element, added extra space outside to make clicking easier.*/
+.cursor__outer {
+padding: 1rem 0;
+}
+  
+/* For clickable element, such as button or link, set different butterfly image to visually convey a pausing effect */
+.cursor--pointer {
+cursor: url("https://github.com/Reikasan/photo_for_codepen/blob/main/vecteezy_monarch-butterfly-design_24134704_small_1.png?raw=true")
+    25 25,
+    pointer;
+}
+
+.cursor--leaning {
+cursor: url("https://github.com/Reikasan/photo_for_codepen/blob/main/vecteezy_monarca-mariposa-diseno_24134725(1).png?raw=true")
+    30 30,
+    default;
+}
+
+/* Normalize */
+*, 
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Styles*/
+a {
+color: #c9184a;
+text-decoration: underline;
+transition: all 0.2s ease-out;
+}
+  
+section,
+footer {
+    padding: 0 10vw 5vw;
+    isolation: isolate;
+    background: #fff;
+    font-size: 1.2rem;
+    position: relative;
+}
+  
+.black-bg {
+background-color: #000;
+color: #fff;
+}
+
+.black-bg.hover-effect {
+    display: block;
+}
+
+
+h1 {
+font-size: 3rem;
+padding: 2rem;
+margin: 1rem 1rem 1rem -2rem;
+}
+
+.button {
+width: 250px;
+padding: 1.5rem 2rem;
+border-radius: 5px;
+background-color: #c9184a;
+border: none;
+color: white;
+font-size: large;
+margin-top: 2rem; 
+}
+
+a.button {
+-webkit-appearance: button;
+-moz-appearance: button;
+appearance: button;
+text-decoration: none;
+text-align: center;
+}
+
+.container {
+height: 500px;
+}
+
+.container .text-content {
+    width: 40%;
+}
+
+.side-image {
+    width: 50vw;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    top: 130px;
+}
+
+.side-image img {
+    width: 100%;
+    }
+  
+div img.butterfly {
+    width: 50px;
+    margin-right: 2rem;
+}
+ div img.butterfly:nth-of-type(2) {
+    width: 55px;
+}
+  
+ div img.butterfly:last-of-type {
+    margin-bottom: 10px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    width: 100%;
+}
+  
+.link--reference {
+    color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 769px) {
+    .projects {
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+}
+
+@media (max-width: 699px) {
+    section,
+    footer {
+        padding: 0 5vw 5vw;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 599px) {
+    button {
+        margin-top: 1rem;
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.8rem;
+    } 
+
+    .container .text-content {
+        width: 100%;
+    }
+
+    .side-image {
+        bottom: 5vw;
+        right: 5vw;
+        top: unset;
+        width: 90vw;
+        height: 200px;
+    }
+
+    div img.butterfly {
+        width: 30px;
+        margin-right: 1rem;
+        
+        &:nth-of-type(2) {
+            width: 35px;
+        }
+    }
+
+    .projects {
+        width: 100%;
+    }
+}

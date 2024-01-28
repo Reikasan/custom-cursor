@@ -1,0 +1,134 @@
+.mouse-stalker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate3d(50vw, 50vh, 0);
+    z-index: 9999;
+    pointer-events: none;
+    transition: all .2s ease-out;
+}
+
+.mouse-stalker.mix-blend {
+    mix-blend-mode: exclusion;
+}
+
+.mouse-stalker.mix-blend .mouse-stalker--circle {
+    background: #fff;
+}
+
+.mouse-stalker.scale--large .mouse-stalker--circle {
+    transform: scale(1.5);
+    background: rgba(0, 0, 0, .9);
+}
+
+.mouse-stalker.scale--small .mouse-stalker--circle {
+    transform: scale(.2);
+    background: rgba(238, 255, 52, 0.8);
+    margin: -20px -20px;
+    cursor: none;
+}
+
+.mouse-stalker--container {
+    position: relative;
+}
+
+.mouse-stalker--circle {
+    width: 50px;
+    height: 50px;
+    margin: -15px 0 0 -15px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .05);
+    opacity: 0;
+    transition: all .2s ease-out;
+}
+
+.mouse-stalker--text {
+    opacity: 0;
+    color:#fff;
+    margin-top: 15px;
+    transition: all .1s ease-out;
+}
+
+.mouse-stalker.isActive .mouse-stalker--circle {
+    opacity: 1;
+}
+
+.mouse-stalker.isActive.show-text .mouse-stalker--text {
+    opacity: 1;
+    position: absolute;
+    top: -50%;
+    left: -25%;
+    /* transform: translate(-50%, -50%); */
+}
+
+/* show hover effect only for the element with actual width */
+.hover-effect {
+    display: inline-block;
+}
+
+.hover-effect.scale--small {
+    cursor: none;
+}
+
+/* Normalized */
+*, 
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+/* styles */
+section {
+    width: 100vw;
+    padding: 0 10vw 5vw;
+    isolation: isolate;
+    background: #fff;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+section h1 {
+    font-size: 3rem;
+    padding: 2rem;
+    margin: 1rem 1rem 1rem -2rem;
+}
+
+section.black-bg {
+    background-color: #000;
+    color: #fff;
+}
+
+.button {
+    width: 20vw;
+    height: 6vw;
+    border-radius: 5px;
+    background-color: #c9184a;
+    border: none;
+    color: white;
+    font-size: large;
+    margin-top: 2rem;
+}
+
+.container {
+    height: 300px;
+}
+
+.img-container {
+    width: 50vw;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 5px 0 0 5px;
+    position: absolute;
+    right: 0;
+    top: 130px;
+}
+
+img {
+    width: 100%;   
+}

@@ -1,0 +1,303 @@
+/* Cursor with Image */
+.cursor-area---image {
+    /* cursor: pointer; */
+    cursor: url('./img/vecteezy_monarca-mariposa-diseno_24134725_small.png')25 25, default;
+}
+
+.cursor-area---image .button {
+    cursor: url('./img/vecteezy_monarch-butterfly-design_24134704_small_1.png')25 25, pointer;
+
+}
+
+/* For bounce animation, separate translate and scale to avoid overwrite */
+.cursor {
+    transform: translate(50vw, 50vh);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    pointer-events: none;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+}
+
+.cursor.isActive div.show{
+    opacity: 1;
+}
+
+/* Cursor with Heart */
+.cursor--heart {
+    opacity: 0;
+    /* Create heart shape */
+    --heartColor: red;
+    --transparent: #0000;
+    aspect-ratio: 1;
+    background:
+    /* top side parts */
+    radial-gradient(circle at 55% 64%, var(--heartColor) 62%, var(--transparent) 63%) top left /50% 50%,
+    radial-gradient(circle at 45% 64%, var(--heartColor) 62%, var(--transparent) 63%) top right /50% 50%,
+    /* small circle in the center to fill the space */
+    radial-gradient(circle at 100% 100%, var(--heartColor) 20%, var(--transparent) 20%) top left /50% 50%,
+    radial-gradient(circle at 0% 100%, var(--heartColor) 20%, var(--transparent) 20%) top right /50% 50%,
+    /* bottom with square shape */
+    linear-gradient(var(--heartColor) 0 0) bottom/100% 50% no-repeat;
+    background-repeat: no-repeat;
+    /* cutting bottom as triangle shape*/
+    clip-path: polygon(-43% 0,50% 91%, 143% 0); 
+    
+    /* You can explore additional methods to create heart shapes using pure css by my CodePen
+        https://codepen.io/reikasan/pen/MWxEoLE
+    */
+}
+
+.cursor--heart.change-color {
+    --heartColor: purple;
+}
+
+.cursor--heart.show.bounce {
+    animation: bounce .5s ease-out 3;
+}
+
+.cursor--heart.show.spinning {
+    animation: spinning 1s ease-in-out 1;
+}
+
+.cursor--heart.show.expand {
+    animation : expand 1s ease-out 1 forwards;
+}
+
+/* Override the visibility of the star and for-text class from within the heart class, as it is nested inside */
+.cursor.isActive .cursor--heart.show.hide {
+    opacity: 0;
+}
+
+.cursor--star {
+    opacity: 0;
+    /* Create star shape */
+    --starColor: #9b5de5;
+    width: 30px;
+    height: 30px;
+    background: var(--starColor);
+    clip-path: polygon(50% 0%, 65% 35%, 98% 35%, 71% 57%, 79% 91%, 50% 70%, 21% 91%, 29% 57%, 2% 35%, 35% 35%);  
+    box-shadow: #000000 1px 1px 3px;
+    /* Move star to actual cursor point */
+    margin: -30px 0 0 0;
+}
+
+.cursor--for-text {
+    opacity: 0;
+    /* Create text shape */
+    --textColor: #9b5de5;
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    border-left: red 2px solid;
+}
+
+.cursor--for-text:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 9px;
+    height: 2px;
+    background: red;
+    opacity: 0;
+}
+.cursor--for-text:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    width: 9px;
+    height: 2px;
+    background: red;
+    opacity: 0;
+}
+
+.cursor--for-text.show,
+.cursor--for-text.show:before,
+.cursor--for-text.show:after {
+    opacity: 1;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes spinning {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes expand {
+    0% {
+        transform: scale(1);
+    }
+    5% {
+        transform: scale(0.8);
+    }
+    20% {
+        transform: scale(1.2);
+    }
+    25% {
+        transform: scale(.8);
+    }
+    40% {
+        transform: scale(1.4);
+    }
+    45% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.6);
+    }
+    65% {
+        transform: scale(1.2);
+    }
+    80% {
+        transform: scale(1.8);
+    }
+    85% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(2);
+    }
+}
+
+.mouse-stalker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(50vw, 50vh);
+    z-index: 9999;
+    pointer-events: none;
+    transition: all .2s ease-out;
+}
+
+.mouse-stalker--text {
+    opacity: 0;
+    color: #e7c6ff;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: bold;
+    transition: all .1s ease-out;
+    text-shadow: #000000 1px 1px 3px;
+}
+.mouse-stalker.isActive .mouse-stalker--text.show {
+    opacity: 1;
+    position: absolute;
+    top: -20px;
+    left: 0;
+}
+
+.mouse-stalker.isActive .mouse-stalker--text.show.bounce {
+    animation: bounce .5s ease-out 3;
+}
+
+
+/* show hover effect only for the element with actual width */
+.hover-effect {
+    display: inline-block;
+    cursor: none;
+}
+
+/* Styles */
+a {
+  color: #c9184a;
+  text-decoration: underline;
+  transition: all .2s ease-out;
+}
+
+section, footer {
+  width: 100vw;
+  padding: 0 10vw 5vw;
+  isolation: isolate;
+  background: #fff;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.black-bg {
+  background-color: #000;
+  color: #fff;
+}
+  
+h1 {
+  font-size: 3rem;
+  padding: 2rem;
+  margin: 1rem 1rem 1rem -2rem;
+}
+
+.button {
+  width: 200px;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  background-color: #fff;
+  border: none;
+  color: var(--bc);
+  font-size: large;
+  margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    height: fit-content;
+    color: #fff;
+    align-items: center;
+    justify-items: center;
+}
+
+.grid__item {
+    background: var(--bc);
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-rows: 1fr 1.5fr 1fr
+}
+
+.grid__item div {
+    padding:  0 2rem;
+}
+
+.grid__item div:last-of-type {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.grid__item h3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.projects {
+    display: flex;
+    justify-content: space-between;
+}
+.project {
+    width: 40vw;
+}
+
+.link--reference {
+    color: #ddd;
+}

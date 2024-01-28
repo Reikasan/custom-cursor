@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./custom-cursor.css" rel="stylesheet" type="text/css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=League+Script&family=Pacifico&family=Vibur&display=swap');
+    </style>
+    <title>custom-cursor</title>
+</head>
+<body>
+    <div class="cursor">
+        <div class="cursor--heart"></div>
+        <div class="cursor--star"></div>
+        <div class="cursor--for-text"></div>
+    </div>
+    <div id="mouse-stalker" class="mouse-stalker">
+        <div class="mouse-stalker__container">
+           <div class="mouse-stalker--circle"></div> 
+            <p class="mouse-stalker--text">Like!?</p>
+        </div>
+    </div>
+    <section>
+        <h1 class="">Custom Cursor</h1>
+
+        <div class="grid">
+            <div class="grid__item cursor-area---image" style="--bc:#0081a7">
+                <div>
+                    <h3>Using Image on cursor property</h3>
+                </div>
+                <div>
+                    <p>Utilizing image enables intricate details expression, yet sacrifices some smoothness in movement.</p>
+                    
+                </div>
+                <div>
+                    <button class="button">Hover me!</button>
+                </div>
+            </div>
+            <div class="grid__item hover-effect cursor-area--heart" style="--bc:#00afb9">
+                <div>
+                    <h3>Custom Cursor</h3>
+                </div>
+                <div>
+                    <p>With the flexibility to shape it to your preference, a custom cursor, facilitated by JavaScript, seamlessly emulates the behavior of a standard cursor.</p>
+                </div>
+                <div>
+                    <button class="button hover-effect bounce--heart">Hover me!</button>
+                </div>
+            </div>
+            <div class="grid__item cursor-area--heart hover-effect show-text" style="--bc:#001524">
+                <div>
+                    <h3>Cursor Stalker</h3>
+                </div>
+                <div>
+                    <p>In reality, there isn't much disparity between the two; incorporation transitions can effectively mimic the behavior of a cursor stalker.</p>
+                </div>
+                <div>
+                    <button class="button hover-effect bounce--text">Hover me!</button>
+                </div> 
+            </div>
+            <div class="grid__item cursor-area--heart hover-effect" style="--bc:#9f86c0;">
+                <div>
+                    <h3>Flexibility of Custom Cursor:<br/>Dynamic Color Variation</h3>
+                </div>
+                <div>
+                    <p>Utilizing color-shifting upon hovering is an effective method to emphasize element. Thanks to the power of CSS, its effortlessly implemented.</p>
+                </div>
+                <div>
+                    <button class="button change-color hover-effect">Hover me!</button>
+                </div>
+            </div>
+            <div class="grid__item cursor-area--heart hover-effect" style="--bc:#ffa69e">
+                <div>
+                    <h3>Flexibility of Custom Cursor:<br/>Shape Shifting</h3>
+                </div>
+                <div>
+                    <p class="hover-effect cursor-area--for-text">Not limited to color, you can also dynamically adjust the shape of your cursor! Explore segmentalised custom cursor for finer control.</p>
+                </div>
+                <div>
+                    <button class="button hover-effect change-shape">Hover me!</button>
+                </div>
+            </div>
+            <div class="grid__item cursor-area--heart hover-effect change-color" style="--bc:#e56b6f">
+                <div>
+                    <h3 class="hover-effect spinning-heart">Flexibility of Custom Cursor:<br/>Animation</h3>
+                </div>
+                <div>
+                    <p class="hover-effect bounce--heart">As showcased through hovering over various buttons, animation can be seamlessly integrated into both custom cursor and cursor stalker functionalities.</p>
+                </div>
+                <div>
+                    <button class="button hover-effect show-text expand">Hover me!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="black-bg">
+        <h1>Would you like to explore more?</h1>
+        <h2>Check out my other CodePen projects!</h2>
+        <div class="projects">
+          <div class="project">
+            <div class="cursor__outer">
+              <!-- Cursor: pointer -->
+              <a href="https://codepen.io/reikasan/full/VwRzeZL" class="cursor--pointer">Custom Cursor Stalker</a>
+            </div>
+            <iframe height="300" style="width: 100%;" scrolling="no" title="Custom Cursor Stalker" src="https://codepen.io/reikasan/embed/VwRzeZL?default-tab=" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+              See the Pen <a href="https://codepen.io/reikasan/pen/VwRzeZL">
+              Custom Cursor Stalker</a> by Reika Akuzawa (<a href="https://codepen.io/reikasan">@reikasan</a>)
+              on <a href="https://codepen.io">CodePen</a>.
+            </iframe>
+          </div>
+          <div class="project">
+            <div class="cursor__outer">
+              <!-- Cursor: pointer -->
+              <a href="https://codepen.io/reikasan/pen/eYXGgOB" class="cursor--pointer">Custom Cursor with PNG image</a>
+            </div>
+            <iframe height="300" style="width: 100%;" scrolling="no" title="Image Cursor" src="https://codepen.io/reikasan/embed/eYXGgOB?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/reikasan/pen/eYXGgOB">
+                Image Cursor</a> by Reika Akuzawa (<a href="https://codepen.io/reikasan">@reikasan</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+            </iframe>
+          </div>
+        </div>
+    </section>
+    <footer class="black-bg">
+        <small>
+            <a href="https://www.vecteezy.com/free-png/butterfly" class="link--reference pointer-cursor__target">Butterfly PNGs by Vecteezy</a>
+        </small>
+    </footer>
+</body>
+<script src="./custom-cursor.js"></script>
+</html>
